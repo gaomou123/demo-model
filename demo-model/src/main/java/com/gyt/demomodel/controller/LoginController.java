@@ -14,7 +14,7 @@ import org.thymeleaf.util.StringUtils;
 public class LoginController {
     @GetMapping({"/toLogin", "/", ""})
     public String toLogin() {
-        return "/login";
+        return "login";
     }
 
     @PostMapping("/doLogin")
@@ -28,9 +28,9 @@ public class LoginController {
             throw new RuntimeException("账号和用户名不能为空！");
         }
         if ("admin".equals(username) && "abcd".equals(password)) {
-            return "/index";
+            return "index";
         } else {
-            return "/login";
+            return "login";
         }
     }
 }
